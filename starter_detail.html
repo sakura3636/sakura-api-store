@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>スターターキット詳細｜Sakura API Store</title>
+  <meta name="description" content="日経225マイクロ先物を題材に、自動売買システムの基本構造を学ぶ初心者向けPython教材キット。利益目的の売買ロジックは非搭載。学習用途限定。" />
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#111; --muted:#666; --line:#e8e8e8;
+      --card:#fafafa; --accent:#0a7; --accent2:#08a; --warn:#b00020;
+      --radius:14px; --shadow:0 6px 24px rgba(0,0,0,.06);
+    }
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--fg);line-height:1.7}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfbff)}
+    .wrap{max-width:980px;margin:0 auto;padding:22px 18px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    @media (max-width:860px){.hero{grid-template-columns:1fr}}
+    h1{font-size:26px;margin:0 0 8px}
+    .lead{color:var(--muted);margin:0 0 14px}
+    .badge{display:inline-block;border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:999px;font-size:12px;color:#333;margin-right:8px;margin-bottom:8px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+    .cta{display:flex;flex-direction:column;gap:10px}
+    .btn{display:inline-block;text-align:center;background:var(--accent);color:#fff;padding:12px 14px;border-radius:12px;font-weight:700}
+    .btn:hover{text-decoration:none;filter:brightness(.98)}
+    .btn.secondary{background:#111}
+    .mini{font-size:12px;color:var(--muted)}
+    section{padding:18px 0;border-bottom:1px solid var(--line)}
+    h2{font-size:18px;margin:0 0 10px}
+    ul{margin:8px 0 0 1.2em}
+    li{margin:6px 0}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:860px){.grid2{grid-template-columns:1fr}}
+    .warnbox{border-left:4px solid var(--warn);background:#fff6f7;border-radius:12px;padding:12px 14px}
+    .okbox{border-left:4px solid var(--accent);background:#f5fffb;border-radius:12px;padding:12px 14px}
+    .kicker{font-weight:700}
+    footer{padding:18px 0;color:var(--muted);font-size:12px}
+    code{background:#fff;border:1px solid var(--line);padding:2px 6px;border-radius:8px}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div>
+          <span class="badge">初心者向け</span>
+          <span class="badge">Python教材</span>
+          <span class="badge">日経225マイクロ先物（題材）</span>
+          <span class="badge">利益ロジック非搭載</span>
+        </div>
+
+        <h1>日経225マイクロ先物を題材にした<br>初心者向けPythonプログラミング学習用教材キット</h1>
+
+        <p class="lead">
+          本商品は、日経225マイクロ先物を題材として、自動売買システムの基本構造を理解するための
+          <strong>初心者向けPythonプログラミング学習用教材キット</strong>です。
+        </p>
+
+        <div class="warnbox">
+          <div class="kicker">重要（免責事項等の明記）</div>
+          <ul>
+            <li>本商品には、<strong>利益を目的とした売買ロジックは一切含まれておりません</strong>。</li>
+            <li>本商品は、<strong>投資助言または売買指示</strong>を目的としたものではありません。</li>
+            <li>本商品は、<strong>売買の判断材料を提供するものではありません</strong>。</li>
+            <li>本商品は、<strong>プログラミング学習用途に限定</strong>されます。</li>
+            <li>本商品を用いた実売買の結果について、当ショップは<strong>一切の責任を負いません</strong>。</li>
+            <li>本商品は、金融商品取引法上の<strong>投資助言業務には該当しません</strong>。</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="card cta">
+        <div>
+          <div class="kicker">購入（インフォカート）</div>
+          <div class="mini">※決済リンクはインフォカートのURLのみを掲載してください。</div>
+        </div>
+
+        <!-- TODO: インフォカートの決済URLに置き換えてください -->
+        <a class="btn" href="INF0CART_PURCHASE_URL" rel="nofollow noopener" target="_blank">インフォカートで購入する</a>
+
+        <a class="btn secondary" href="./risk.html">先物取引のリスク表示（必読）</a>
+
+        <div class="mini">
+          ご購入前に：<a href="./terms.html">利用規約</a> /
+          <a href="./refund.html">返金ポリシー</a> /
+          <a href="./legal.html">特商法表記</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="forwho">
+    <h2>この教材が向いている方</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="kicker">向いている</div>
+        <ul>
+          <li>Pythonで「自動売買プログラムの形」を学びたい方</li>
+          <li>API接続／注文処理／ログ出力／UI表示など、基礎構造を理解したい方</li>
+          <li>まずは<strong>最小構成</strong>で動く教材から入りたい方</li>
+          <li>自分でコードを読み、改良しながら学びたい方</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="kicker">向いていない</div>
+        <ul>
+          <li>「勝てるロジック」や「利益が出る設定」を求める方</li>
+          <li>投資助言、売買指示、銘柄推奨などを期待する方</li>
+          <li>完成済みの自動売買ツールを探している方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="whatis">
+    <h2>この教材で学べること</h2>
+    <div class="okbox">
+      <ul>
+        <li>自動売買プログラムの全体像（起動→データ取得→判定→注文→ログ）</li>
+        <li>安全な実装の考え方（異常時停止、例外処理、誤発注防止の設計）</li>
+        <li>UI表示・ログの見方（「今何をしているか」を可視化する）</li>
+        <li>最小構成のコードをベースに、段階的に拡張する方法</li>
+      </ul>
+    </div>
+
+    <p class="mini">
+      ※ 本教材は「学習用の土台」です。売買判断の正しさや収益性を保証する内容ではありません。
+    </p>
+  </section>
+
+  <section id="features">
+    <h2>主な特徴</h2>
+    <ul>
+      <li><strong>初心者が迷いにくい最小構成</strong>：複雑な仕組みを最初から詰め込まず、理解しやすい形に整理</li>
+      <li><strong>読みやすい構造</strong>：ファイルの役割が明確で、どこを触れば何が変わるかが追いやすい</li>
+      <li><strong>安全設計の思想</strong>：誤動作・誤発注を避けるためのガード（学習目的でも重要）</li>
+      <li><strong>UI/ログで挙動を確認</strong>：ブラックボックス化しない教材設計</li>
+    </ul>
+  </section>
+
+  <section id="limitations">
+    <h2>できないこと（誤解防止）</h2>
+    <div class="warnbox">
+      <ul>
+        <li>利益・勝率・収益性を高める「売買ロジック」は提供しません</li>
+        <li>将来の価格変動を予測する情報は含みません</li>
+        <li>銘柄推奨、売買タイミングの助言は行いません</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="howto">
+    <h2>学習の進め方（おすすめ）</h2>
+    <ol>
+      <li>まずは起動して、UI/ログが動くことを確認</li>
+      <li>ログの意味を読み、どの順番で処理されるかを理解</li>
+      <li>「設定値」だけを変更して挙動が変わることを体験</li>
+      <li>最後に、小さな改造（表示や条件の変更）を行い理解を定着</li>
+    </ol>
+    <p class="mini">※ 実売買を推奨するものではありません。学習用途の範囲でご利用ください。</p>
+  </section>
+
+  <section id="links">
+    <h2>関連ページ</h2>
+    <ul>
+      <li><a href="./risk.html">先物取引のリスク表示（必読）</a></li>
+      <li><a href="./terms.html">利用規約</a></li>
+      <li><a href="./refund.html">返金ポリシー</a></li>
+      <li><a href="./legal.html">特商法に基づく表記</a></li>
+    </ul>
+  </section>
+
+  <section id="buy">
+    <h2>購入</h2>
+    <div class="card cta">
+      <div class="kicker">インフォカート購入ページ</div>
+      <div class="mini">※規約上、決済誘導はインフォカートURLに統一</div>
+      <a class="btn" href="INF0CART_PURCHASE_URL" rel="nofollow noopener" target="_blank">インフォカートで購入する</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>Sakura API Store</div>
+    <div>本ページは学習用教材の説明を目的とし、投資助言・売買指示を行うものではありません。</div>
+  </footer>
+
+</main>
+</body>
+</html>
