@@ -1,121 +1,136 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>スターターキット詳細｜Sakura API Store</title>
-  <meta name="description" content="日経225マイクロ先物を題材に、自動売買システムの基本構造を学ぶ初心者向けPython教材キット。利益目的の売買ロジックは非搭載。学習用途限定。" />
-  <style>
-    :root{
-      --bg:#ffffff; --fg:#111; --muted:#666; --line:#e8e8e8;
-      --card:#fafafa; --accent:#0a7; --accent2:#08a; --warn:#b00020;
-      --radius:14px; --shadow:0 6px 24px rgba(0,0,0,.06);
-    }
-    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--fg);line-height:1.7}
-    a{color:var(--accent2);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfbff)}
-    .wrap{max-width:980px;margin:0 auto;padding:22px 18px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
-    @media (max-width:860px){.hero{grid-template-columns:1fr}}
-    h1{font-size:26px;margin:0 0 8px}
-    .lead{color:var(--muted);margin:0 0 14px}
-    .badge{display:inline-block;border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:999px;font-size:12px;color:#333;margin-right:8px;margin-bottom:8px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
-    .cta{display:flex;flex-direction:column;gap:10px}
-    .btn{display:inline-block;text-align:center;background:var(--accent);color:#fff;padding:12px 14px;border-radius:12px;font-weight:700}
-    .btn:hover{text-decoration:none;filter:brightness(.98)}
-    .btn.secondary{background:#111}
-    .mini{font-size:12px;color:var(--muted)}
-    section{padding:18px 0;border-bottom:1px solid var(--line)}
-    h2{font-size:18px;margin:0 0 10px}
-    ul{margin:8px 0 0 1.2em}
-    li{margin:6px 0}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width:860px){.grid2{grid-template-columns:1fr}}
-    .warnbox{border-left:4px solid var(--warn);background:#fff6f7;border-radius:12px;padding:12px 14px}
-    .okbox{border-left:4px solid var(--accent);background:#f5fffb;border-radius:12px;padding:12px 14px}
-    .kicker{font-weight:700}
-    footer{padding:18px 0;color:var(--muted);font-size:12px}
-    code{background:#fff;border:1px solid var(--line);padding:2px 6px;border-radius:8px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Starter Sales</title>
+<style>
+body{margin:0;background:#fff;color:#111;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.7}
+.wrap{max-width:980px;margin:auto;padding:22px}
+.panel{border:1px solid #e8e8e8;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 6px 24px rgba(0,0,0,.04)}
+.panel--white{background:#ffffff;border-left:6px solid #e5e7eb}
+.panel--green{background:#f5fffb;border-left:6px solid #16a34a}
+.panel--pink{background:#fff6f7;border-left:6px solid #e11d48}
+h1.title{margin:0 0 8px;font-size:39px;font-weight:800;letter-spacing:.2px}
+p.lead{margin:6px 0 0;color:#444}
+h2{margin:0 0 10px;font-size:18px;color:#333;border-bottom:1px solid #e8e8e8;padding-bottom:6px}
+p{color:#555;margin:6px 0}
+.two{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+.img img{width:100%;max-width:560px;border-radius:12px;border:1px solid #e8e8e8}
+.sp{height:8px}
+.card{background:#fafafa;border:1px solid #e8e8e8;border-radius:14px;padding:16px}
+.btn{display:inline-block;background:#0a7;color:#fff;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+ul{margin:8px 0 0 1.2em}
+li{margin:6px 0}
+footer{margin-top:30px;font-size:12px;color:#777;border-top:1px solid #e8e8e8;padding-top:16px}
+</style>
+
+<style>
+.buy-card{background:#ffffff;border:1px solid #e8e8e8;border-radius:14px;padding:16px;margin:8px 0 12px;box-shadow:0 6px 24px rgba(0,0,0,.04)}
+.buy-title{font-weight:700;margin-bottom:4px}
+.buy-mini{font-size:12px;color:#666;margin-bottom:10px}
+.btn-wide{display:block;width:100%;text-align:center;background:#10a36a;color:#fff;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn-wide:hover{filter:brightness(.98)}
+.notice-green{background:#e8f6f1;border-left:6px solid #16a34a;border-radius:12px;padding:12px 14px}
+.notice-green ul{margin:0 0 0 1.2em}
+.notice-green li{margin:6px 0;color:#2b3a35}
+</style>
+
+
+<style>
+.header-brand{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.header-brand img{height:80px;object-fit:contain}
+@media (max-width:640px){.header-brand img{height:64px}}
+.footer-strong{font-weight:700;font-size:15px;color:#444}
+</style>
+
 </head>
-
 <body>
-<header>
-  <div class="wrap">
-    <div class="hero">
-      <div>
-        <div>
-          <span class="badge">初心者向け</span>
-          <span class="badge">Python教材</span>
-          <span class="badge">日経225マイクロ先物（題材）</span>
-          <span class="badge">利益追求ロジック非搭載</span>
-        </div>
+<div class="wrap">
 
-        <h1>KabuステーションAPI 日経225マイクロ先物 自動売買スターターキット（Python）</h1>
+<div class="header-brand">
+  <img src="./ヘッダ画像.png" alt="Sakura API Store">
+</div>
 
-        <p class="lead">
-          本商品は、日経225マイクロ先物を題材として、自動売買システムの基本構造を理解するための
-          <strong>初心者向けPythonプログラミング学習用教材キット</strong>です。
-        </p>
 
-        <h2>販売価格</h2>
-        <p>
-        本教材の販売価格は、9,800円（税込）です。<br>
-        ※決済はインフォカートの決済システムを通じて行われます。
-        </p>
 
-        <div class="warnbox">
-          <div class="kicker">重要（免責事項等の明記）</div>
-          <ul>
-            <li>本商品には、<strong>利益を目的とした売買ロジックは一切含まれておりません</strong>。</li>
-            <li>本商品は、<strong>投資助言または売買指示</strong>を目的としたものではありません。</li>
-            <li>本商品は、<strong>売買の判断材料を提供するものではありません</strong>。</li>
-            <li>本商品は、<strong>プログラミング学習用途に限定</strong>されます。</li>
-            <li>本商品を用いた実売買の結果について、当ショップは<strong>一切の責任を負いません</strong>。</li>
-            <li>本商品は、金融商品取引法上の<strong>投資助言業務には該当しません</strong>。</li>
-          </ul>
-        </div>
-      </div>
+<div class="panel panel--white">
+  <h1 class="title">🌸KabuステーションAPI 日経225マイクロ自動売買<br>　スターターキット（Python）</h1>
+  <p class="lead">本商品は、日経225マイクロ先物を題材として、自動売買システムの基本構造を理解するための初心者向けPythonプログラミング学習用教材キットです。</p>
+</div>
 
-      <aside class="card cta">
-        <div>
-          <div class="kicker">購入（インフォカート）</div>
-          <div class="mini">※決済リンクはインフォカートのURLのみ</div>
-        </div>
-
-        <!-- ★インフォカート決済リンク実装済 -->
-        <a class="btn" href="http://www.infocart.jp/a.php?item=80782" rel="nofollow noopener" target="_blank">インフォカートで購入する</a>
-
-        <a class="btn secondary" href="./risk.html">先物取引のリスク表示（必読）</a>
-
-        <div class="mini">
-          ご購入前に：<a href="./terms.html">利用規約</a> /
-          <a href="./refund.html">返金ポリシー</a> /
-          <a href="./legal.html">特商法表記</a>
-        </div>
-      </aside>
-    </div>
+<div class='panel panel--green' style='background:#f5fffb;border-left:6px solid #16a34a'><h2>■あなただけの自動売買システムを育ててみませんか？</h2><div class='sp'></div><p>本商品は、日経225マイクロ先物を対象に、 KabuステーションAPIを使った自動売買プログラムを「最小構成」で体験・理解するための初心者向け教材です。UI表示可能な完全動作するソースコードを配布します。</p><div class='sp'></div><p>いきなり「売買ロジックの構築」を目指すのではなく、まずはAPI接続・注文処理・UI構成の基本を、安全に・確実に動かすことに特化しています。</p><div class='sp'></div><p>本キットをベースとすれば、Pythonの専門知識がなくても、あたかもプラモデルを組み立てるように、将来的に本格的な自動売買システムの開発スキルを身に付けることができます。</p><div class='sp'></div></div>
+<div class='panel panel--pink' style='background:#fff6f7;border-left:6px solid #e11d48'><h2>■こんな方に向いています</h2><div class='sp'></div><p>・Pythonで自動売買システムを開発することに興味のある方</p><p>・KabuステーションAPIを使った自動売買を学びたい方</p><p>・API接続や注文コードの実装でつまずいて挫折してしまった方</p><p>・Pythonで自動売買を実装したいが、まずは動く最小構成を知りたい方</p><p>・将来的に自分でオリジナルロジックや安全装置を実装したい方</p><p>・Pythonの専門知識がなくても本格的な自動売買システムを開発したい方</p><div class='sp'></div><p>※ 本商品は、今後の本格的な自動売買システム開発の基本的スキルを学ぶための学習教材です。API接続や注文処理の仕組みを理解するために、あえて最小構成で設計された自動売買スターターキットです。</p><div class='sp'></div><p>※  本キットのプログラム自体は正常に動作しますが、あくまでも学習を目的とした教材であり、利益を目的とした実運用には適していません。</p><div class='sp'></div></div>
+<div class='panel panel--white' style='background:#ffffff;border-left:6px solid #e5e7eb'><h2>■この教材で学べること</h2><div class='sp'></div><p>・自動売買プログラムの全体像（起動→データ取得→判定→注文→ログ）</p><p>・安全な実装の考え方（異常時停止、例外処理、誤発注防止の設計）</p><p>・UI表示・ログの見方（「今何をしているか」を可視化する）</p><p>・最小構成のコードをベースに、段階的に拡張する方法</p><p></p><div class='sp'></div><p>※教材の特徴：</p><p>初心者が迷いにくい最小構成：複雑な仕組みを最初から詰め込まず、理解しやすい形に整理</p><p>読みやすい構造：ファイルの役割が明確で、どこを触れば何が変わるかが追いやすい</p><p>安全設計の思想：誤動作・誤発注の防止等のプログラムの安全性を高める考え方を学べる</p><p>UI/ログで挙動を確認：ブラックボックス化しない教材設計</p><div class='sp'></div>
+<div class="two">
+  <div class="img">
+    <img src="./StarterKit.jpg" alt="UI">
   </div>
-</header>
+</div>
+<div class='sp'></div><div class='sp'></div></div>
+<div class='panel panel--green' style='background:#f5fffb;border-left:6px solid #16a34a'><h2>■ 本商品の最大の特長</h2><div class='sp'></div><p>このスターターキットは、まず「KabuステーションAPIで自動売買が本当に動く」という事実を、ご自身のPC環境で体験できる教材です。以下のシリーズ製品の第一弾となります。</p><div class='sp'></div><p>（１）KabuステーションAPI 日経225マイクロ先物 自動売買スターターキット（Python）9,800円（税込み）</p><p>　　　⇒API接続・注文処理・UI構築の基本を、実際に動作するサンプルコードを使って学習できるキットです。</p><div class='sp'></div><p>（２）KabuステーションAPI 日経225マイクロ先物 売買ロジック学習キット（Python）19,800円（税込み）</p><p>　　　⇒売買ロジックを自由に編集し、実売買またはテスト環境で検証できる中級者向けキットです。</p><div class='sp'></div><p>（３）KabuステーションAPI 日経225マイクロ先物 自動売買システム開発キット（Python）29,800円（税込み）</p><p>　　　⇒本格的な自動売買システムを安全に開発したい人向けの中～上級者向けキットです。</p><div class='sp'></div><p>このスターターキットは、KabuステーションAPIを利用した日経225先物（マイクロ・ミニ・ラージ）の本格的な自動売買システムを実装していくための最初のベースとなります。</p><div class='sp'></div><p>今後発売される上位キットを利用すれば、Pythonプログラムに関する知識がほとんどない初心者でも、あたかもプラモデルを組み立てるように、安全に機能を追加し、自動売買システムを育ててゆくことができます。</p><div class='sp'></div><p>通常、Pythonの自動売買システムをプログラマや業者に依頼すると数十万円～百万円以上かかります。</p><div class='sp'></div><p>上記シリーズは、自動売買システムに興味のあるユーザーにとって、安価なコストで安全に自動売買システムを実装できることをコンセプトとして作成しました。</p><div class='sp'></div><p>スターターキットから上位キットへのアップグレードは差額のみでアップグレード可能です（アップグレードキットを提供します）。最上位キットまで購入しても3万円もかかりません。</p><div class='sp'></div><p>さらにその後の学習用教材として、好みのオプション機能をユーザー自身が実装できるように、初心者でも簡単に組み込めるオプションキットを発売する予定です。</p><div class='sp'></div><p>最終的にはAI判断、機械学習や深層学習など、高度な機能までご自身で組む込むことができるようになります。</p><div class='sp'></div><p>KabuステーションAPIを利用した自動売買システムの世界をぜひ本キットで体験してみてください。</p><div class='sp'></div></div>
+<div class='panel panel--pink' style='background:#fff6f7;border-left:6px solid #e11d48'><h2>■本キットでできること</h2><div class='sp'></div><p>・KabuステーションAPIへの接続</p><p>・APIを通じた注文リクエスト送信の一連の流れの確認</p><p>・APIエラー（余力不足など）の実際の挙動確認</p><p>・Pythonコードで実装したAPIによる売買動作の体験</p><p>・最小限のUI画面による発注操作</p><p>・API挙動確認のための実売買動作</p><p>・自動売買システムの最小ファイル構成の理解</p><p>・オプション（別売）の追加によるアップグレード</p><div class='sp'></div></div>
+<div class='panel panel--white' style='background:#ffffff;border-left:6px solid #e5e7eb'><h2>■本キットでできないこと</h2><div class='sp'></div><p>以下は あえて含めていません。</p><div class='sp'></div><p>・勝率の高い売買ロジックの提供</p><p>・自動で利益を出し続ける仕組み</p><p>・完全な自動売買機能</p><div class='sp'></div><p>※本キットの目的は安全かつ低コストで「自動売買の仕組みを学ぶこと」です。</p><div class='sp'></div></div>
+<div class='panel panel--green' style='background:#f5fffb;border-left:6px solid #16a34a'><h2>■商品内容（ダウンロード）</h2><div class='sp'></div><p>Pythonコード一式（4ファイル）：</p><div class='sp'></div><p>　・main.py</p><p>　・api.py</p><p>　・order.py</p><p>　・ui.py</p><div class='sp'></div><p>マニュアル（PDF3冊）</p><p>　・Anacondaインストールマニュアル　8ページ</p><p>　・Kabuステーション初心者向けマニュアル　8ページ</p><p>　・スターターキット教材　16ページ</p><div class='sp'></div><p>※starter_kitフォルダ内にあるREADME.txtを最初にお読みください。</p><div class='sp'></div></div>
+<div class='panel panel--pink' style='background:#fff6f7;border-left:6px solid #e11d48'><h2>■対象銘柄について</h2><div class='sp'></div><p>対象銘柄：日経225マイクロ先物（１枚固定）</p><div class='sp'></div><p>初期状態：2026年3月限</p><div class='sp'></div><p>初心者の混乱を避けるため、</p><p>先物銘柄コードと限月はあらかじめ固定しています。</p><div class='sp'></div><p>※2026年6月限への変更方法はキット内で説明します。</p><div class='sp'></div></div>
+<div class='panel panel--white' style='background:#ffffff;border-left:6px solid #e5e7eb'><h2>■動作環境・利用条件（必須）</h2><div class='sp'></div><p>以下をすべて満たしている必要があります。</p><div class='sp'></div><p>・Windows 10または Windows 11 のインターネット接続可能なパソコン</p><p>・Intel Core i5または同等以上のCPU、8GB以上のRAM、20GB以上の空ディスク</p><p>・テキストエディタでテキストファイルを編集できること（メモ帳でも可）</p><p>・Anaconda3 のインストール（教材にマニュアル同梱）</p><p>・KabuステーションのAPIパスワード取得（マニュアル同梱）</p><div class='sp'></div></div>
+<div class='panel panel--green' style='background:#f5fffb;border-left:6px solid #16a34a'><h2>■サポートについて</h2><div class='sp'></div><p>学習時の不明点やご質問は、当ショップの公式サイトにてAIチャット（全キットを学習済みのAI）がお答えします。また、個別質問用のお問い合わせフォーム、よくあるご質問（FAQ）等もご用意しております。</p><div class='sp'></div></div>
+<div class='panel panel--pink' style='background:#fff6f7;border-left:6px solid #e11d48'><h2>■注意事項</h2><div class='sp'></div><p>本商品のコードは全て当ショップが独自に実装したものであり、実装したコードの著作権は当ショップが保有しています。本商品の第三者への配布、販売、公開、譲渡を禁じます。</p><div class='sp'></div></div>
+<div class='panel panel--white' style='background:#ffffff;border-left:6px solid #e5e7eb'><h2>■おわりに</h2><div class='sp'></div><p>このスターターキットは、</p><div class='sp'></div><p>「API自動売買の入口を、安全に体験すること」</p><div class='sp'></div><p>に特化した教材です。</p><div class='sp'></div><p>まずは動かし、APIを通じたプログラム動作を体験してみてください。</p><div class='sp'></div><p>それが、あなただけの自動売買システムを構築する第一歩となります。</p><div class='sp'></div><p>本キットが皆様のPython学習の一助となれば幸いです。</p><div class='sp'></div><div class='sp'></div></div>
+<div class='panel panel--green' style='background:#f5fffb;border-left:6px solid #16a34a'><h2>■販売価格</h2><p>本教材の販売価格は、9,800円（税込）です。</p><p>※決済はインフォカート社の決済システムを通じて行われます。</p><div class='sp'></div></div>
 
-<main class="wrap">
+<div class='panel panel--pink' style='background:#fff6f7;border-left:6px solid #e11d48'>
+  <h2>■重要（免責事項等の明記）</h2>
+  <p>・本商品には、利益を目的とした売買ロジックは一切含まれておりません。</p>
+  <p>・本商品は、投資助言または売買指示を目的としたものではありません。</p>
+  <p>・本商品は、売買の判断材料を提供するものではありません。</p>
+  <p>・本商品は、プログラミング学習用途に限定されます。</p>
+  <p>・本商品を用いた実売買の結果について、当ショップは一切の責任を負いません。</p>
+  <p>・本商品は、金融商品取引法上の投資助言業務には該当しません。</p>
+  <div class='sp'></div>
+</div>
 
-  <section id="buy">
-    <h2>購入</h2>
-    <div class="card cta">
-      <div class="kicker">インフォカート購入ページ</div>
-      <div class="mini">※規約上、決済誘導はインフォカートURLに統一</div>
-      <a class="btn" href="http://www.infocart.jp/a.php?item=80782" rel="nofollow noopener" target="_blank">インフォカートで購入する</a>
-    </div>
-  </section>
+<section id="links" class="panel panel--white">
+  <h2>関連ページ</h2>
+  <ul>
+    <li><a href="./risk.html">先物取引のリスク表示（必読）</a></li>
+    <li><a href="./terms.html">利用規約</a></li>
+    <li><a href="./refund.html">返金ポリシー</a></li>
+    <li><a href="./legal.html">特商法に基づく表記</a></li>
+  </ul>
+</section>
 
-  <footer>
-    <div>Sakura API Store</div>
-    <div>本ページは学習用教材の説明を目的とし、投資助言・売買指示を行うものではありません。</div>
-  </footer>
+<section id="buy" class="panel panel--white">
+  <h2>ご購入</h2>
+  <div class="buy-card">
+    <div class="buy-title">以下のボタンをクリックするとインフォカート社の決済ページに進みます</div>
+    <div class="buy-mini"></div>
+    <a class="btn-wide" href="http://www.infocart.jp/a.php?item=80782" rel="nofollow noopener" target="_blank">ご購入はこちら</a>
+  </div>
+  <div class="notice-green">
+    <ul>
+      <li>クレジットカード、銀行振込よりお選びいただけます。</li>
+      <li>クレジットカード分割払いは、VISAかMASTERカードのみでご利用いただけます。</li>
+      <li>銀行振り込みの場合は、お振込み手数料がかかります。</li>
+      <li>クレジットの分割決済をご選択頂いた場合は、分割手数料がかかります。</li>
+      <li>クレジットカード分割払いは、商品金額以上の限度額がないとご利用いただけません。</li>
+      <li>デビットカードでは分割決済をご利用いただけません。</li>
+      <li>本教材は、ダウンロード商品です。</li>
+      <li>電子書籍による販売につき、お客さま都合による返品・返金は受け付けておりません。</li>
+      <li>ご注文後、入金が確定しましたら購入者マイページより案内PDFをダウンロードしてください。</li>
+    </ul>
+  </div>
+</section>
 
-</main>
+
+<footer>
+  <div class="footer-strong">
+    @Sakura API Store 2026<br>
+    本ページは学習用教材の説明を目的とし、投資助言・売買指示を行うものではありません。
+  </div>
+</footer>
+
+
+</div>
 </body>
 </html>
