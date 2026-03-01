@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <title>サポート</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.support-block{margin-top:30px;padding:20px;border:1px solid #ddd;border-radius:8px;background:#fafafa}
+.support-block h2{margin-top:0}
+.btn{display:inline-block;margin-top:10px;padding:10px 20px;background:#4CAF50;color:#fff;text-decoration:none;border-radius:5px}
+.btn:hover{opacity:0.9}
+form input,form textarea{width:100%;padding:8px;margin-top:5px;margin-bottom:15px;border:1px solid #ccc;border-radius:4px}
+form button{padding:10px 20px;background:#4CAF50;color:#fff;border:none;border-radius:5px;cursor:pointer}
+form button:hover{opacity:0.9}
+</style>
 </head>
 
 <body>
@@ -18,22 +27,65 @@
 <a href="risk.html">リスク</a>
 </div>
 
-<h1>サポート窓口（準備中）</h1>
+<h1>サポート窓口</h1>
 
 <p>
-よくある質問は当ページのFAQページに掲載予定です。<Br>
-今後、当ショップの教材を全て学習したAIチャットを設置する予定です。<Br>
-それ以外のお問い合わせのみ、当サポートページのフォームをご利用ください。<Br>
+当ショップの学習キットの使い方や<br>
+学習に関する各種ご質問については<br>
+AIサポートチャットをご利用ください。<br><br>
+
+よくある質問については<br>
+FAQページをご確認ください。<br><br>
+
+AIまたはFAQで解決しない場合のみ<br>
+お問い合わせフォームをご利用ください。
 </p>
+
+<div class="support-block">
+<h2>🌸 AIサポートチャット（準備中）</h2>
+<p>
+当ショップの学習キットの使い方や学習に関する各種ご質問については
+AIが自動で回答します。まずはこちらをご利用ください。
+</p>
+<iframe
+src="AIチャットURL"
+width="100%"
+height="500"
+style="border:none;">
+</iframe>
+</div>
+
+<div class="support-block">
+<h2>📘 よくある質問（FAQ）</h2>
+<p>
+SYMBOL変更方法、TESTモードの使い方、logic_user.pyの編集方法、
+API接続エラー対処などをまとめています。
+</p>
+<a href="FAQページURL" class="btn">FAQを見る（準備中）</a>
+</div>
+
+<div class="support-block">
+<h2>✉ お問い合わせフォーム</h2>
+<p>
+AIまたはFAQで解決しない場合のみご利用ください。
+</p>
+<form action="FormspreeURL" method="POST">
+<label>お名前</label>
+<input type="text" name="name" required>
+
+<label>メールアドレス</label>
+<input type="email" name="email" required>
+
+<label>お問い合わせ内容</label>
+<textarea name="message" rows="5" required></textarea>
+
+<button type="submit">送信する</button>
+</form>
+</div>
 
 <footer style="margin-top:40px; text-align:center; font-size:13px; color:#666;">
-
 <hr style="margin-bottom:20px;">
-
-<p>
-Sakura API Store Official Site
-</p>
-
+<p>Sakura API Store Official Site</p>
 <p>
 <a href="index.html">TOP</a>
 <a href="products.html">商品</a>
@@ -42,13 +94,8 @@ Sakura API Store Official Site
 <a href="refund.html">返金ポリシー</a>
 <a href="risk.html">リスク</a>
 </p>
-
-<p>
-© 2026 Sakura API Store All Rights Reserved.
-</p>
-
+<p>© 2026 Sakura API Store All Rights Reserved.</p>
 </footer>
-
 
 </div>
 </body>
