@@ -1,95 +1,409 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sakura API Store Official Site</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  background:#ffffff;
+  color:#111;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  line-height:1.7;
+}
+
+.wrap{
+  max-width:980px;
+  margin:auto;
+  padding:22px;
+}
+
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  justify-content:center;
+  margin:0 0 20px;
+  padding:12px 14px;
+  background:#fafafa;
+  border:1px solid #e8e8e8;
+  border-radius:14px;
+}
+
+.nav a{
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.nav a:hover{
+  text-decoration:underline;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:24px;
+  align-items:center;
+  background:linear-gradient(135deg,#fff8fb 0%,#ffffff 55%,#f5fffb 100%);
+  border:1px solid #eadfe5;
+  border-radius:22px;
+  padding:26px;
+  margin:0 0 22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.hero-image img{
+  width:100%;
+  max-width:180px;
+  border-radius:14px;
+  display:block;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.hero-kicker{
+  display:inline-block;
+  font-size:13px;
+  font-weight:700;
+  color:#a85578;
+  background:#fff1f5;
+  border:1px solid #f4d7e2;
+  border-radius:999px;
+  padding:6px 12px;
+  margin-bottom:12px;
+}
+
+.hero-title{
+  margin:0 0 10px;
+  font-size:42px;
+  line-height:1.2;
+  font-weight:800;
+  color:#f2a6be;
+  letter-spacing:.3px;
+}
+
+.hero-subtitle{
+  margin:0 0 18px;
+  font-size:17px;
+  color:#444;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-block;
+  background:#3b73e0;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.btn:hover{
+  filter:brightness(.98);
+}
+
+.btn-sub{
+  display:inline-block;
+  background:#ffffff;
+  color:#2f5fb8;
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid #d6e2ff;
+}
+
+.btn-sub:hover{
+  background:#f7faff;
+}
+
+.panel{
+  border:1px solid #e8e8e8;
+  border-radius:16px;
+  padding:20px 22px;
+  margin:16px 0;
+  box-shadow:0 6px 24px rgba(0,0,0,.04);
+}
+
+.panel--white{
+  background:#ffffff;
+  border-left:8px solid #d1d5db;
+}
+
+.panel--green{
+  background:#f5fffb;
+  border-left:8px solid #9bd600;
+}
+
+.panel--pink{
+  background:#fff6f8;
+  border-left:8px solid #f3b0c7;
+}
+
+h1{
+  margin:0 0 10px;
+  font-size:28px;
+  font-weight:800;
+  color:#2a5fb8;
+}
+
+h2{
+  margin:0 0 12px;
+  font-size:22px;
+  color:#111;
+}
+
+p{
+  margin:8px 0;
+  color:#333;
+}
+
+ul{
+  margin:10px 0 0 1.2em;
+  padding-left:1em;
+}
+
+li{
+  margin:6px 0;
+  color:#222;
+}
+
+.btn-wrap{
+  margin-top:22px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:14px;
+}
+
+.mini-card{
+  background:#ffffff;
+  border:1px solid #e8e8e8;
+  border-radius:14px;
+  padding:16px;
+}
+
+.mini-card h3{
+  margin:0 0 8px;
+  font-size:18px;
+  color:#333;
+}
+
+.mini-card p{
+  margin:0;
+  color:#555;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px 16px;
+  margin:10px 0;
+}
+
+.footer-links a{
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.footer-links a:hover{
+  text-decoration:underline;
+}
+
+footer{
+  margin-top:36px;
+  text-align:center;
+  font-size:13px;
+  color:#666;
+  border-top:1px solid #e8e8e8;
+  padding-top:20px;
+}
+
+@media (max-width:760px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:20px;
+  }
+
+  .hero-image{
+    display:flex;
+    justify-content:center;
+  }
+
+  .hero-title{
+    font-size:34px;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:640px){
+  .wrap{
+    padding:14px;
+  }
+
+  .nav{
+    gap:8px 12px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+
+  .hero-title{
+    font-size:28px;
+  }
+
+  .hero-subtitle{
+    font-size:15px;
+  }
+
+  .panel{
+    padding:16px;
+  }
+}
+</style>
 </head>
 
 <body>
-<div class="container">
+<div class="wrap">
 
-<div class="nav">
-<a href="index.html">TOP</a>
-<a href="products.html">商品</a>
-<a href="support.html">サポート</a>
-<a href="terms.html">利用規約</a>
-<a href="refund.html">返金ポリシー</a>
-<a href="risk.html">リスク</a>
-</div>
+  <div class="nav">
+    <a href="index.html">TOP</a>
+    <a href="products.html">商品</a>
+    <a href="support.html">サポート</a>
+    <a href="terms.html">利用規約</a>
+    <a href="refund.html">返金ポリシー</a>
+    <a href="risk.html">リスク</a>
+  </div>
 
+  <!-- ヒーローエリア -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="sakura.png" alt="Sakura API Store">
+    </div>
 
+    <div class="hero-text">
+      <div class="hero-kicker">公式ショップ</div>
+      <h1 class="hero-title">Sakura API Store</h1>
+      <p class="hero-subtitle">
+        KabuステーションAPIを題材とした
+        Python学習教材を提供する公式サイトです。<br>
+        初心者向けの入門教材から、将来の本格開発につながる応用教材まで、
+        段階的に学べる構成を目指しています。
+      </p>
 
-<h1>🌸🌸Sakura API Store 公式サイト🌸🌸</h1>
-<p style="text-align:center; font-size:28px;">
-</p>
+      <div class="hero-actions">
+        <a class="btn" href="products.html">商品一覧を見る</a>
+        <a class="btn-sub" href="starter_detail.html">スターター詳細へ</a>
+      </div>
+    </div>
+  </section>
 
-<p>
-Sakura API Store は、KabuステーションAPIを題材とした  
-Pythonプログラミング学習教材を提供する公式ショップです。
+  <section class="panel panel--white">
+    <h1>🌸🌸Sakura API Store 公式サイト🌸🌸</h1>
 
-</p>
+    <p>
+      Sakura API Store は、KabuステーションAPIを題材とした
+      Pythonプログラミング学習教材を提供する公式ショップです。
+    </p>
 
-<h2>当ショップが提供する商品</h2>
-<ul>
-<li>Pythonによる自動売買プログラムの入門教材</li>
-<li>自動売買のシステム構造を理解するための応用教材</li>
-<li>本格的な自動売買システム開発のための上級者向け教材</li>
-<li>追加モジュール・オプション教材等の提供</li>
-</ul>
+    <h2>当ショップが提供する商品</h2>
+    <ul>
+      <li>Pythonによる自動売買プログラムの入門教材</li>
+      <li>自動売買のシステム構造を理解するための応用教材</li>
+      <li>本格的な自動売買システム開発のための上級者向け教材</li>
+      <li>追加モジュール・オプション教材等の提供</li>
+    </ul>
 
-<div style="margin-top:30px;">
-<a class="btn" href="products.html">商品一覧を見る</a>
-</div>
+    <div class="info-grid">
+      <div class="mini-card">
+        <h3>はじめての方へ</h3>
+        <p>
+          まずはスターターキットで、
+          API自動売買の基本構造とファイル構成を体験的に学べます。
+        </p>
+      </div>
 
-<h2>動作環境・利用条件（全て必須）</h2>
-<ul>
-<li>Windows 10または Windows 11 のインターネット接続可能なパソコン</li>
-<li>Intel Core i5または同等以上のCPU、8GB以上のRAM、20GB以上の空ディスク</li>
-<li>テキストエディタでテキストファイルを編集できること（メモ帳でも可）</li>
-<li>Anaconda3 のインストール（教材にマニュアル同梱）</li>
-<li>KabuステーションのAPIパスワード取得（マニュアル同梱）</li>
-</ul>
+      <div class="mini-card">
+        <h3>今後の展開</h3>
+        <p>
+          入門教材だけでなく、検証用教材、上級者向け教材、
+          追加モジュールなども順次提供予定です。
+        </p>
+      </div>
+    </div>
 
-<hr>
+    <div class="btn-wrap">
+      <a class="btn" href="products.html">商品一覧を見る</a>
+    </div>
+  </section>
 
-<h2>スターターキットについて（2026年3月発売予定）</h2>
-<p>
-本商品は、日経225マイクロ先物を題材として、Pythonによる
-自動売買プログラムの基本構造を理解するための<Br>
-初心者向けプログラミング学習用教材キットです。
-将来、本格的なシステムを開発したい人が手軽に始められるように、<Br>
-最小限のシステム構成キットを提供します。<Br>
-</p>
+  <section class="panel panel--green">
+    <h2>動作環境・利用条件（全て必須）</h2>
+    <ul>
+      <li>Windows 10または Windows 11 のインターネット接続可能なパソコン</li>
+      <li>Intel Core i5または同等以上のCPU、8GB以上のRAM、20GB以上の空ディスク</li>
+      <li>テキストエディタでテキストファイルを編集できること（メモ帳でも可）</li>
+      <li>Anaconda3 のインストール（教材にマニュアル同梱）</li>
+      <li>KabuステーションのAPIパスワード取得（マニュアル同梱）</li>
+    </ul>
+  </section>
 
-<div style="margin-top:30px;">
-<a class="btn" href="starter_detail.html">商品の詳細へ</a>
-</div>
+  <section class="panel panel--pink">
+    <h2>スターターキットについて（2026年3月発売予定）</h2>
+    <p>
+      本商品は、日経225マイクロ先物を題材として、Pythonによる
+      自動売買プログラムの基本構造を理解するための
+      初心者向けプログラミング学習用教材キットです。
+      将来、本格的なシステムを開発したい人が手軽に始められるように、
+      最小限のシステム構成キットを提供します。
+    </p>
 
+    <div class="btn-wrap">
+      <a class="btn" href="starter_detail.html">商品の詳細へ</a>
+    </div>
+  </section>
 
-<footer style="margin-top:40px; text-align:center; font-size:13px; color:#666;">
+  <footer>
+    <p>Sakura API Store Official Site</p>
 
-<hr style="margin-bottom:20px;">
+    <div class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="products.html">商品</a>
+      <a href="support.html">サポート</a>
+      <a href="terms.html">利用規約</a>
+      <a href="refund.html">返金ポリシー</a>
+      <a href="risk.html">リスク</a>
+    </div>
 
-<p>
-Sakura API Store Official Site
-</p>
-
-<p>
-<a href="index.html">TOP</a>
-<a href="products.html">商品</a>
-<a href="support.html">サポート</a>
-<a href="terms.html">利用規約</a>
-<a href="refund.html">返金ポリシー</a>
-<a href="risk.html">リスク</a>
-</p>
-
-<p>
-© 2026 Sakura API Store All Rights Reserved.
-</p>
-
-</footer>
-
+    <p>© 2026 Sakura API Store All Rights Reserved.</p>
+  </footer>
 
 </div>
 </body>

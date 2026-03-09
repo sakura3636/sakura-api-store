@@ -32,40 +32,61 @@ form button:hover{opacity:0.9}
 <p>
 当ショップの学習キットの使い方や<br>
 学習に関する各種ご質問については<br>
-AIサポートチャットをご利用ください。<br><br>
+3通りのサポートをご用意しております。<br><br>
+
+自動売買やPythonに関する一般的なご質問は<br>
+「AIサポートチャット」をご利用ください。<br><br>
 
 よくある質問については<br>
-FAQページをご確認ください。<br><br>
+「よくある質問（FAQ）」をご覧ください。<br><br>
 
 AIまたはFAQで解決しない場合のみ<br>
-お問い合わせフォームをご利用ください。
+「お問い合わせフォーム」をご利用ください。
 </p>
 
 <div class="support-block">
-<h2>🌸 AIサポートチャット（準備中）</h2>
+<h2>🌸 AIサポートチャット</h2>
+
 <p>
-当ショップの学習キットの使い方や学習に関する各種ご質問については
-AIが自動で回答します。まずはこちらをご利用ください。
+自動売買やPythonに関する一般的なご質問は<br>
+AIサポートチャットをご利用ください。
 </p>
-<iframe>
-</iframe>
+
+<p>
+以下のリンクをクリックしてChatGPTを開き、<br>
+質問内容を入力してください。
+</p>
+
+<a href="https://chat.openai.com/" target="_blank" class="btn">
+AIサポートを開く
+</a>
+
+<p style="margin-top:15px;font-size:13px;color:#666;">
+※ 現在のAIサポートチャットでは一般的な技術質問にのみ回答します。<br>
+（今後は当ショップの教材を学習させたAIチャットをご用意する予定です）<br>
+※ 学習キット固有の問題や解決しない場合はお問い合わせフォームをご利用ください。
+</p>
+
 </div>
 
 <div class="support-block">
 <h2>📘 よくある質問（FAQ）</h2>
 <p>
-SYMBOL変更方法、TESTモードの使い方、logic_user.pyの編集方法、
-API接続エラー対処などをまとめています。
+当ショップの学習キットに関するよくある質問をまとめています。随時、追加されます。
 </p>
-<a href="FAQページURL" class="btn">FAQを見る（準備中）</a>
+<a href="faq.html" class="btn">FAQを見る</a>
 </div>
 
 <div class="support-block">
 <h2>✉ お問い合わせフォーム</h2>
 <p>
-AIまたはFAQで解決しない場合のみご利用ください。
+AIまたはFAQで解決しない場合のみご利用ください。必要事項を入力し[送信する]ボタンを押してください。「送信が無事に完了しました」というメッセージが出たら正常です。１～２営業日以内にメールで回答いたします（土日・祝日の場合はその翌日になります）。
 </p>
-<form action="FormspreeURL" method="POST">
+
+<form action="https://formspree.io/f/xqeyepea" method="POST">
+
+<input type="hidden" name="_next" value="thanks.html">
+
 <label>お名前</label>
 <input type="text" name="name" required>
 
@@ -76,12 +97,19 @@ AIまたはFAQで解決しない場合のみご利用ください。
 <textarea name="message" rows="5" required></textarea>
 
 <button type="submit">送信する</button>
+
 </form>
+
 </div>
 
 <footer style="margin-top:40px; text-align:center; font-size:13px; color:#666;">
+
 <hr style="margin-bottom:20px;">
-<p>Sakura API Store Official Site</p>
+
+<p>
+Sakura API Store Official Site
+</p>
+
 <p>
 <a href="index.html">TOP</a>
 <a href="products.html">商品</a>
@@ -90,7 +118,11 @@ AIまたはFAQで解決しない場合のみご利用ください。
 <a href="refund.html">返金ポリシー</a>
 <a href="risk.html">リスク</a>
 </p>
-<p>© 2026 Sakura API Store All Rights Reserved.</p>
+
+<p>
+© 2026 Sakura API Store All Rights Reserved.
+</p>
+
 </footer>
 
 </div>
